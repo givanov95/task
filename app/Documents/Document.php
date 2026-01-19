@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Documents;
 
-use App\Documents\Components\Customer;
 use App\Documents\Components\Item;
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Collection;
 
-abstract class Document
+abstract class Document implements Arrayable
 {
     /**
      * @var Collection
@@ -16,8 +16,6 @@ abstract class Document
     public Collection $items;
 
     public function __construct(
-        public Customer $customer,
-
     ) {
         $this->items = new Collection();
     }
