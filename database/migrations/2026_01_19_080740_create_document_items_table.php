@@ -17,7 +17,6 @@ return new class extends Migration {
                 ->constrained('documents')
                 ->cascadeOnDelete();
 
-            $table->string('name');
             $table->decimal('unit_price', 12, 2);
             $table->unsignedInteger('quantity');
             $table->decimal('total_price', 12, 2);
