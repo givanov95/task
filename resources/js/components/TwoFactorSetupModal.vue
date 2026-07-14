@@ -41,6 +41,17 @@ const { qrCodeSvg, manualSetupKey, clearSetupData, fetchSetupData, errors } =
 const showVerificationStep = ref(false);
 const code = ref<string>('');
 
+// Fortify returns the confirm errors inside the confirmTwoFactorAuthentication
+// error bag, which Inertia's slot types flatten to string — cast to the real shape.
+const confirmationCodeError = (
+    formErrors?: Record<string, unknown>,
+): string | undefined =>
+    (
+        formErrors?.confirmTwoFactorAuthentication as
+            | { code?: string }
+            | undefined
+    )?.code;
+
 const pinInputContainerRef = useTemplateRef('pinInputContainerRef');
 
 const modalConfig = computed<{
@@ -270,10 +281,7 @@ watch(
                                     </InputOTPGroup>
                                 </InputOTP>
                                 <InputError
-                                    :message="
-                                        errors?.confirmTwoFactorAuthentication
-                                            ?.code
-                                    "
+                                    :message="confirmationCodeError(errors)"
                                 />
                             </div>
 
