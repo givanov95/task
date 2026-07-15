@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf8120f27fb36bc404718537c17eabdc",
+    "content-hash": "193c9f43b1cb95148057b8ba3ba2ca3e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6813,21 +6813,21 @@
         },
         {
             "name": "givanov95/laravel-git-hooks",
-            "version": "v0.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/givanov95/laravel-git-hooks.git",
-                "reference": "ef670c8304f9fbafa05bfedf2c54c27c0c23b974"
+                "reference": "19a777f99fa3ab2ea73b8ec5fdb68e383f27676b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/givanov95/laravel-git-hooks/zipball/ef670c8304f9fbafa05bfedf2c54c27c0c23b974",
-                "reference": "ef670c8304f9fbafa05bfedf2c54c27c0c23b974",
+                "url": "https://api.github.com/repos/givanov95/laravel-git-hooks/zipball/19a777f99fa3ab2ea73b8ec5fdb68e383f27676b",
+                "reference": "19a777f99fa3ab2ea73b8ec5fdb68e383f27676b",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.0",
-                "php": "^8.3"
+                "php": "^8.2"
             },
             "require-dev": {
                 "composer/composer": "^2.5",
@@ -6867,9 +6867,9 @@
             ],
             "support": {
                 "issues": "https://github.com/givanov95/laravel-git-hooks/issues",
-                "source": "https://github.com/givanov95/laravel-git-hooks/tree/v0.1.0"
+                "source": "https://github.com/givanov95/laravel-git-hooks/tree/v1.1.1"
             },
-            "time": "2026-05-26T07:56:23+00:00"
+            "time": "2026-06-23T10:29:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
