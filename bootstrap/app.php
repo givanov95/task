@@ -19,7 +19,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             HandleAppearance::class,
             HandleInertiaRequests::class,
-            AddLinkHeadersForPreloadedAssets::class,
+            // Only the first entries (CSS, entry chunk) matter for 103 Early Hints; an unbounded
+            // Link header outgrows the origin's per-header buffer (8 KB Apache/FastCGI, 4 KB nginx)
+            // on chunk-heavy pages and the response is cut off before the browser sees it.
+            AddLinkHeadersForPreloadedAssets::using(limit: 20),
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
